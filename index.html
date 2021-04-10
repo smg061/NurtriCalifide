@@ -6,49 +6,149 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
         <title>NutriCalifide</title>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css"> super-feature
+        <link rel="stylesheet" href="assets/css/style.css">
     </head>
 
     <body>
-        <header class="">
-            <h1>NutriCalifide</h1>
-        </header>
+        <section class="hero is-primary">
+            <div class="hero-body">
+              <p class="title">
+                NutriCalifide
+              </p>
+              <p class="subtitle">
+            Your number 1 meal recipes provider~
+              </p>
+            </div>
+          </section>
+        
+    <body>
         <a class="navbar-item">
             Username
-          </a>
-        <!--change is-active to default-->
-        <div class="dropdown is-active">
+        </a>
+         <!--Changed to hover dropdown style-->
+        <div class="dropdown is-hoverable">
             <div class="dropdown-trigger">
-              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                <span>Dropdown button</span>
+              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                <span>Progress</span>
+       
                 <span class="icon is-small">
                   <i class="fas fa-angle-down" aria-hidden="true"></i>
                 </span>
               </button>
-            </div>
-            <div class="dropdown-menu" id="dropdown-menu" role="menu">
-              <div class="dropdown-content">
-                <a href="#" class="dropdown-item">
-                  Dropdown item
-                </a>
-                <a class="dropdown-item">
-                  Other dropdown item
-                </a>
-                <a href="#" class="dropdown-item is-active">
-                  Active dropdown item
-                </a>
-                <a href="#" class="dropdown-item">
-                  Other dropdown item
-                </a>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                  With a divider
-                </a>
-              </div>
-            </div>
           </div>
+            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                        dropdown item
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        other dropdown item
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        active dropdown item
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="columns">
+            <div class="column">
+                <p>Breakfast</p>
+            </div>
+            <div class="column">
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                        <span>Suggested Recipes</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item">
+                                dropdown item
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                other dropdown item
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                active dropdown item
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                        <span>Daily Progress</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item">
+                                dropdown item
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                other dropdown item
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                active dropdown item
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                        <span>Calorie Intake</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item">
+                                dropdown item
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                other dropdown item
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                active dropdown item
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <p>Lunch</p>
+            </div>
+            <div class="column">
+                <p>input data</p>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="column">
+                <p>Dinner</p>
+            </div>
+            <div class="column">
+                <p>input data</p>
+            </div>
+        </div>
+
+          
+          <button class="viewPlan">View Meal Plan</button>
+          <button class="recipes">Recipes</button>
+          <button class="goalReview">Review This Week's Goal</button>
         <script src="assets/js/script.js"></script>
     </body>
 </html>
