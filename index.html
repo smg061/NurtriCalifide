@@ -13,6 +13,7 @@
     <body>
         <section class="hero is-primary">
             <div class="hero-body">
+            <img src="assets/photos/logo.jpeg" alt="NutriCalifide Logo">
               <p class="title">
                 NutriCalifide
               </p>
@@ -21,37 +22,49 @@
               </p>
             </div>
           </section>
-        
-    <body>
-        <a class="navbar-item">
-            Username
-        </a>
 
-        <div class="dropdown is-hoverable">
-            <div class="dropdown-trigger">
-              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-                <span>Progress</span>
-       
-                <span class="icon is-small">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
-          </div>
-            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                <div class="dropdown-content">
-                    <a href="#" class="dropdown-item">
-                        dropdown item
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        other dropdown item
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        active dropdown item
-                    </a>
-                </div>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+          
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
             </div>
-        </div>
-
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item">
+                        Username
+                    </a>    
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                            <span>Progress</span>
+                            <span class="icon is-small">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item">
+                                    dropdown item
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    other dropdown item
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    active dropdown item
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>  
+            </nav>
+        
         <div class="columns">
             <div class="column is-one-third has-background-danger-dark">
                 <p>Breakfast</p>
@@ -180,7 +193,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="dropdown is-hoverable">
                         <div class="dropdown-trigger">
                           <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -286,10 +299,13 @@
             </div>
         </div>
 
-          
-          <button class="viewPlan">View Meal Plan</button>
-          <button class="recipes">Recipes</button>
-          <button class="goalReview">Review This Week's Goal</button>
+
+        <div class="columns">
+                <button class="viewPlan button is-primary">View Meal Plan</button>
+                <button class="recipes button is-primary">Recipes</button>
+                <button class="goalReview button is-primary">Review This Week's Goal</button>
+        </div>
+
         <script src="assets/js/script.js"></script>
     </body>
 </html>
