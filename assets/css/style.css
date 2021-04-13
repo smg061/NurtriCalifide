@@ -6,5 +6,18 @@ body {
 img {
     display: block;
     float:left;
-    width: 100px;
+    width: 95px;
+}
+
+p {
+    vertical-align: middle;
+}
+
+div.is-one-third{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+a.navbar-item{
+    font-size: 24px;
 }
