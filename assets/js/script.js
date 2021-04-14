@@ -18,6 +18,9 @@ function openModal(date) {
         newEventModal.style.display = 'block';
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d7493fada539b88d55bdcab1bf3d42db4e6125d3
 
     backDrop.style.display = 'block';
 }
@@ -84,6 +87,7 @@ function initButtons() {
 }
 
 initButtons();
+<<<<<<< HEAD
 load();
 =======
     res.json()
@@ -111,3 +115,6 @@ function handleSearchFormSubmit(event) {
 
 searchFormEl.addEventListener('submit', handleSearchFormSubmit);
 >>>>>>> 1524bb33ad56ac82eb3daf69a0a2580412ce8dc5
+=======
+load();
+>>>>>>> d7493fada539b88d55bdcab1bf3d42db4e6125d3
