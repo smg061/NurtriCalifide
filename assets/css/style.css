@@ -1,10 +1,12 @@
 body {
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 img {
     display: block;
     float:left;
+
     width: 100px;
 }
 
@@ -62,3 +64,42 @@ form {
     }
   }
   
+
+    width: 95px;
+}
+
+p {
+    vertical-align: middle;
+}
+
+div.is-one-third{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+a.navbar-item{
+    font-size: 24px;
+}
+
+.about-tool .about-text{
+    float: right;
+    visibility: hidden;
+    border-radius: 6px;
+    background-color: turquoise;
+    width: 300px;
+    text-align: left;
+    padding: 10px;
+    position: absolute;
+    white-space: pre-wrap;
+    right: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: 1s;
+
+}
+
+.about-tool:hover .about-text{
+    visibility: visible;
+    opacity: 1;
+}
+
