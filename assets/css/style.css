@@ -6,8 +6,8 @@ body {
 img {
   display: block;
   float:left;
-
-  width: 100px;
+  width: 95px;
+  border-radius: 6px;
 }
 
 .has-background-warning-light{
@@ -62,8 +62,6 @@ span.psw {
   .cancelbtn {
     width: 100%;
   }
-}
-  width: 95px;
 }
 
 p {
