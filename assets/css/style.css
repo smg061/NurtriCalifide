@@ -1,17 +1,99 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    color: white;
+  font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 img {
+  display: block;
+  float:left;
+
+  width: 100px;
+}
+
+.has-background-warning-light{
+  background-color: #f5b31f!;
+}
+
+
+form {
+  border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 300px) {
+  span.psw {
     display: block;
-    border-radius: 6px;
-    float:left;
-    width: 95px;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+  width: 95px;
 }
 
 p {
-    vertical-align: middle;
+  vertical-align: middle;
+}
+
+div.is-one-third{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+a.navbar-item{
+  font-size: 24px;
+}
+
+.about-tool .about-text{
+  float: right;
+  visibility: hidden;
+  border-radius: 6px;
+  background-color: turquoise;
+  width: 300px;
+  text-align: left;
+  padding: 10px;
+  position: absolute;
+  white-space: pre-wrap;
+  right: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: 1s;
+
 }
 
 div.is-one-third {
@@ -45,126 +127,3 @@ a.navbar-item {
     opacity: 1;
 }
 
-button {
-    width: 75px;
-    cursor: pointer;
-    box-shadow: 0px 0px 2px rgb(54, 127, 236);
-    border: none;
-    outline: none;
-    padding: 5px;
-    border-radius: 5px;
-    color: rgb(29, 28, 28);
-  }
-  
-  #footer {
-    padding: 10px;
-    color: #d36c6c;
-    font-size: 26px;
-    font-family: sans-serif;
-    display: flex;
-    justify-content: space-between;
-  }
-  #footer button {
-    background-color:#92a1d1;
-  }
-  #container {
-    width: 770px;
-  }
-  #weekdays {
-    width: 100%;
-    display: flex;
-    color: #247BA0;
-  }
-  #weekdays div {
-    width: 100px;
-    padding: 10px;
-  }
-  #calendar {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  #monthDisplay{
-    color: darkblue;
-  }
-  .day {
-    width: 100px;
-    padding: 10px;
-    height: 100px;
-    cursor: pointer;
-    box-sizing: border-box;
-    background-color: white;
-    color:darkblue;
-    margin: 5px;
-    box-shadow: 0px 0px 3px #4672e9;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .day:hover {
-    background-color: #2c547a;
-  }
-  
-  .day + #currentDay {
-    background-color:#06344b;
-  }
-  .event {
-    font-size: 10px;
-    padding: 3px;
-    background-color: #58bae4;
-    color: white;
-    border-radius: 5px;
-    max-height: 55px;
-    overflow: hidden;
-  }
-  .padding {
-    cursor: default !important;
-    background-color: #FFFCFF !important;
-    box-shadow: none !important;
-  }
-  #newEventModal, #deleteEventModal {
-    display: none;
-    z-index: 20;
-    padding: 25px;
-    background-color: #e8f4fa;
-    box-shadow: 0px 0px 3px black;
-    border-radius: 5px;
-    width: 350px;
-    top: 100px;
-    left: calc(50% - 175px);
-    position: absolute;
-    font-family: sans-serif;
-  }
-  #eventMeals {
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 25px;
-    border-radius: 3px;
-    outline: none;
-    border: none;
-    box-shadow: 0px 0px 3px gray;
-  }
-  #eventMeals.error {
-    border: 2px solid red;
-  }
-  /* #cancelButton, #deleteButton {
-    background-color: #d36c6c;
-  } */
-  #closeButton {
-    background-color: #92a1d1;
-  }
-  #eventText {
-    font-size: 14px;
-  }
-  #modalBackDrop {
-    display: none;
-    top: 0px;
-    left: 0px;
-    z-index: 10;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background-color: rgba(0,0,0,0.8);
-  }

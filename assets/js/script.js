@@ -17,6 +17,7 @@ function openModal(date) {
     } else {
         newEventModal.style.display = 'block';
     }
+<<<<<<< HEAD
 
     backDrop.style.display = 'block';
 }
@@ -84,3 +85,29 @@ function initButtons() {
 
 initButtons();
 load();
+=======
+    res.json()
+})
+.then(data => console.log(data))
+.catch(error => console.log("Error"))
+
+var searchFormEl = document.querySelector('#search-form');
+
+function handleSearchFormSubmit(event) {
+  event.preventDefault();
+
+  var searchInputVal = document.querySelector('#search-input').value;
+  var formatInputVal = document.querySelector('#format-input').value;
+
+  if (!searchInputVal) {
+    console.error('You need a search input value!');
+    return;
+  }
+
+  var queryString = './search-results.html?q=' + searchInputVal + '&format=' + formatInputVal;
+
+  location.assign(queryString);
+}
+
+searchFormEl.addEventListener('submit', handleSearchFormSubmit);
+>>>>>>> 1524bb33ad56ac82eb3daf69a0a2580412ce8dc5
