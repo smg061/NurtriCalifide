@@ -1,87 +1,109 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    color: white;
+  font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 img {
-    display: block;
-    float:left;
-
-    width: 100px;
+  display: block;
+  float:left;
+  width: 95px;
+  border-radius: 6px;
 }
 
 .has-background-warning-light{
-    background-color: #f5b31f!;
+  background-color: #f5b31f!;
 }
 
-  
+
 form {
-    border: 3px solid #f1f1f1;
-  }
-  
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  button {
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    background-color: #f44336;
-  }
+  border: 3px solid #f1f1f1;
+}
 
-  .container {
-    padding: 16px;
-  }
-  
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 300px) {
   span.psw {
-    float: right;
-    padding-top: 16px;
+    display: block;
+    float: none;
   }
-  
-  @media screen and (max-width: 300px) {
-    span.psw {
-      display: block;
-      float: none;
-    }
-    .cancelbtn {
-      width: 100%;
-    }
+  .cancelbtn {
+    width: 100%;
   }
-  
-
-    width: 95px;
 }
 
 p {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 div.is-one-third{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+a.navbar-item{
+  font-size: 24px;
+}
+
+.about-tool .about-text{
+  float: right;
+  visibility: hidden;
+  border-radius: 6px;
+  background-color: turquoise;
+  width: 300px;
+  text-align: left;
+  padding: 10px;
+  position: absolute;
+  white-space: pre-wrap;
+  right: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: 1s;
+
+}
+
+div.is-one-third {
     font-size: 30px;
     font-weight: bold;
 }
 
-a.navbar-item{
+a.navbar-item {
     font-size: 24px;
 }
 
-.about-tool .about-text{
+.about-tool .about-text { 
     float: right;
     visibility: hidden;
     border-radius: 6px;
@@ -98,7 +120,7 @@ a.navbar-item{
 
 }
 
-.about-tool:hover .about-text{
+.about-tool:hover .about-text {
     visibility: visible;
     opacity: 1;
 }
