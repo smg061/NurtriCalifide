@@ -1,6 +1,3 @@
-
-
-
 // API call variables
 
 AP_ID = "8644d665";
