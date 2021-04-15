@@ -4,6 +4,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
         <title>NutriCalifide</title>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
@@ -11,6 +12,7 @@
     </head>
 
     <body>
+        
         <section class="hero is-primary">
             <div class="hero-body">
             <img src="assets/photos/logo.jpeg" alt="NutriCalifide Logo">
@@ -50,13 +52,13 @@
                         <div class="dropdown-menu" id="dropdown-menu4" ro   le="menu">
                             <div class="dropdown-content">
                                 <a href="#" class="dropdown-item">
-                                    dropdown item
+                                    display description
                                 </a>
                                 <a href="#" class="dropdown-item">
-                                    other dropdown item
+                                    display description 
                                 </a>
                                 <a href="#" class="dropdown-item">
-                                    active dropdown item
+                                    display description
                                 </a>
                             </div>
                         </div>
@@ -89,13 +91,13 @@
                     <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                         <div class="dropdown-content">
                             <a href="#" class="dropdown-item">
-                                Suggested Receipes
+                                Suggested Recipes + image
                             </a>
                             <a href="#" class="dropdown-item">
-                                other dropdown item
+                                Suggested Recipes + image
                             </a>
                             <a href="#" class="dropdown-item">
-                                active dropdown item
+                                Suggested Recipes+ image
                             </a>
                         </div>
                     </div>
@@ -112,13 +114,19 @@
                     <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                         <div class="dropdown-content">
                             <a href="#" class="dropdown-item">
-                                dropdown item
+                                800 Calories
                             </a>
                             <a href="#" class="dropdown-item">
-                                other dropdown item
+                                1000Calories
                             </a>
                             <a href="#" class="dropdown-item">
-                                active dropdown item
+                                1100 Calories
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                1300 Calories
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                1500 Calories
                             </a>
                         </div>
                     </div>
@@ -143,13 +151,13 @@
                         <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                             <div class="dropdown-content">
                                 <a href="#" class="dropdown-item">
-                                    Suggested Receipes
+                                    Suggested Recipes+ image
                                 </a>
                                 <a href="#" class="dropdown-item">
-                                    other dropdown item
+                                    Suggested Recipes + image
                                 </a>
                                 <a href="#" class="dropdown-item">
-                                    active dropdown item
+                                    Suggested Recipes + image
                                 </a>
                             </div>
                         </div>
@@ -166,13 +174,19 @@
                         <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                             <div class="dropdown-content">
                                 <a href="#" class="dropdown-item">
-                                    dropdown item
+                                    800 Calories
                                 </a>
                                 <a href="#" class="dropdown-item">
-                                    other dropdown item
+                                    1000Calories
                                 </a>
                                 <a href="#" class="dropdown-item">
-                                    active dropdown item
+                                    1100 Calories
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    1300 Calories
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    1500 Calories
                                 </a>
                             </div>
                         </div>
@@ -182,7 +196,7 @@
         </div>
         
         <div class="columns">
-            <div class="column is-one-third has-background-warning-dark">
+            <div class="column is-one-third has-background-warning">
                 <p>Dinner</p>
             </div>
             <div class="column has-background-link-light">
@@ -198,13 +212,13 @@
                         <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                             <div class="dropdown-content">
                                 <a href="#" class="dropdown-item">
-                                    Suggested Receipes
+                                    Suggested Recipes + image
                                 </a>
                                 <a href="#" class="dropdown-item">
-                                    other dropdown item
+                                    Suggested Recipes + image
                                 </a>
                                 <a href="#" class="dropdown-item">
-                                    active dropdown item
+                                    Suggested Recipes + image
                                 </a>
                             </div>
                         </div>
@@ -221,14 +235,20 @@
                         <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                             <div class="dropdown-content">
                                 <a href="#" class="dropdown-item">
-                                    dropdown item
+                                    800 Calories
                                 </a>
                                 <a href="#" class="dropdown-item">
-                                    other dropdown item
+                                    1000Calories
                                 </a>
                                 <a href="#" class="dropdown-item">
-                                    active dropdown item
+                                    1100 Calories
                                 </a>
+                                <a href="#" class="dropdown-item">
+                                    1300 Calories
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    1500 Calories
+                                </a>    
                             </div>
                         </div>
                     </div>
@@ -248,7 +268,41 @@
                 <button class="goalReview button is-primary is-large is-fullwidth">Review This Week's Goal</button>
             </div>
         </div>
+
+        <div id="container">
+            <div id="footer"></div>
+                <div id="monthDisplay"></div>
+                <span>
+                    <button id="previousClick">Back</button>
+                    <button id="nextClick">Next</button>
+                </span>
+
+            <div id="weekdays">
+                <div>Sunday</div>
+                <div>Monday</div>
+                <div>Tuesday</div>
+                <div>Wednesday</div>
+                <div>Thursday</div>
+                <div>Friday</div>
+                <div>Saturday</div>
+            </div>
+
+            <div id="calendar"></div>
+        </div>
+
+        <div id="newEventModal">
+            <h2>Selected Meals</h2>
+            
+            <input id="eventTitleMeals" placeholder="Selected Meals">
+            <button id="viewMeals">Meals of the day</button>
+        </div>
+
+        <div id="modalBackDrop"></div>
+
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src="assets/js/script.js"></script>
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/calender.js"></script>
+        
+
     </body>
 </html>

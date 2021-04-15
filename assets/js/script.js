@@ -1,6 +1,3 @@
-
-
-
 // API call variables
 
 AP_ID = "8644d665";
@@ -154,4 +151,3 @@ function getNutritionixFoodFetchURL()
     return "https://trackapi.nutritionix.com/v2/search/instant?query=" + searchText // return appropriate URL to fetch
 
 }
-
