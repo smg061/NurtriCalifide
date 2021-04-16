@@ -43,7 +43,12 @@
                     </a>    
                     
                 </div>
-                <!-- dropdown for Progress -->
+                <!-- dropdown for Progress -->      
+        <div class="columns">
+            <div class="column is-one-third has-background-danger-dark" id="breakfastDiv">
+                <p>Breakfast</p>
+            </div>
+            <div class="column has-background-link-light">
                 <div class="dropdown is-hoverable">
                     <div class="dropdown-trigger">
                       <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -168,6 +173,24 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                 </div>
+              </div>
+        
+        <div class="columns">
+            <div class="column is-one-third has-background-warning" id="dinnerDiv">
+                <p>Dinner</p>
+            </div>
+            <div class="column has-background-link-light">
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                          <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
+                            <span>Meal Options</span>
+                            <span class="icon is-small">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </div>
                         <div class="dropdown is-hoverable">
                             <div class="dropdown-trigger">
                               <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -261,22 +284,20 @@
                     </div>
                 </div>
             </div>
-    
-    
-            <div class="columns">
-                <div class="column is-4">
-                    <button class="viewPlan button is-primary is-large is-fullwidth">View Meal Plan</button>
-                </div>
-                <div class="column is-4">
-                    <button class="recipes button is-primary is-large is-fullwidth">Recipes</button>
-                </div>
-                <div class="column is-4">
-                    <button class="goalReview button is-primary is-large is-fullwidth">Review This Week's Goal</button>
-                </div>
+                  
+        <div class="columns">
+            <div class="column is-4">
+                <button class="viewPlan button is-primary is-large is-fullwidth" id="mealPlanBtn">View Meal Plan</button>
+            </div>
+            <div class="column is-4">
+                <button class="recipes button is-primary is-large is-fullwidth">Recipes</button>
+            </div>
+            <div class="column is-4">
+                <button class="goalReview button is-primary is-large is-fullwidth">Review This Week's Goal</button>
+
             </div>
         </main>
         
-
         <div id="container">
             <div id="footer"></div>
                 <div id="monthDisplay"></div>
