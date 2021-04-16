@@ -64,7 +64,7 @@ function load() {
 }
 
 function closeModal() {
-    newEventModal.style.display = 'none';
+    newEventModal.style.display = 'none'; // add meal information here 
     backDrop.style.display = 'none';
 }
 
