@@ -267,5 +267,4 @@ $("#mealPlanBtn").on("click", ()=>
 
     $("#mealPlanDiv").html("");
     
-    
 })
