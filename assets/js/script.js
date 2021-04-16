@@ -35,7 +35,7 @@ function fetchEdamamRecipe(FETCH_URL, mealTime, mealType) {
             var calories = data.hits[i].recipe.calories.toFixed(0)/ data.hits[i].recipe.yield;
             var img = data.hits[i].recipe.image;
             var foodCard = createFoodCard(recipeName, calories, img);
-            var resultsDiv = $("<div>", { class: "card results-display", style: "font-size: 1rem; width: 10rem, padding: 1rem"})
+            var resultsDiv = $("<div>", { class: "card results-display"})
             resultsDiv.append(foodCard)
             $(mealTime).append(resultsDiv);
 
@@ -237,6 +237,7 @@ $(document).on("click", "#submit-add-recipe", (event)=>
     }
     $(".card").html("");
     $(".results-display").css("padding", "0")
+    window.scrollTo(0, 0);
 })
 
 
