@@ -6,6 +6,7 @@ const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
 const backDrop = document.getElementById('modalBackDrop');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const eventTitleMeals = document.getElementById('eventTitleMeals');
 
 function openModal(date) {
     clicked = date;
@@ -13,7 +14,7 @@ function openModal(date) {
     const mealForDay = events.find(e => e.date === clicked);
 
     if (mealForDay) {
-        console.log('Event already exists')
+        console.log(mealTime);
     } else {
         newEventModal.style.display = 'block';
     }
@@ -66,6 +67,9 @@ function load() {
 function closeModal() {
     newEventModal.style.display = 'none'; // add meal information here 
     backDrop.style.display = 'none';
+    eventTitleMeals.value = '';
+    clicked = null;
+    load();
 }
 
 function initButtons() {
@@ -79,7 +83,7 @@ function initButtons() {
         load();
     });
 
-    document.getElementById('closeClick', closeModal)
+    document.getElementById('closeButton').addEventListener('click', closeModal);
 }
 
 initButtons();
