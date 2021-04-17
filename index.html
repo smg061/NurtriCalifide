@@ -74,7 +74,8 @@
                         <div class="about-tool">
                             About
                             <span class="about-text">
-                                Here on NutriCalifide we believe in blah blah blah.
+                                Here at NutriCalifide we believe that overall health comes from a balanced diet. Healthy meals are a key component to a healthy life, however a cheat meal never hurt anyone. This website will provide you with copious amounts of healthy recipes as well as a link to different restaurants that offer not so healthy options. Our calendar and calorie tabs facilitates meal and calorie tracking. We hope that with each click you make you discover meal options that satisfy your every craving. Happy Eating! 
+
                             </span>
                         </div>
                     </button>
@@ -90,55 +91,22 @@
                 <div class="column has-background-link-light">
                     <div class="dropdown is-hoverable">
                         <div class="dropdown-trigger">
-                          <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                            <span>Select Meal Options</span>
-                            <span class="icon is-small">
-                              <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                          </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                          <div class="dropdown-content">
-                            <div class="dropdown-item">
-                              <p>Healthy Meals</p>
+                            <div class="select" id="selectBreakfast">
+                                <select>
+                                    <option>Recipe</option>
+                                    <option>Cheat Meal</option>
+                                </select>
                             </div>
-                          </div>
-                          <div class="dropdown-content">
-                              <div class="dropdown-item">
-                                  <p>Cheat Meals</p>
-                              </div>
-                          </div>
                         </div>
-                      </div>
-
+                    </div>
                     <div class="dropdown is-hoverable">
-                        <div class="dropdown-trigger">
-                          <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                            <span>Calorie Intake</span>
-                            <span class="icon is-small">
-                              <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                          </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                            <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">
-                                    800 Calories
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    1000Calories
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    1100 Calories
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    1300 Calories
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    1500 Calories
-                                </a>
-                            </div>
-                        </div>
+                        <div class="select", id="selectBreakfastCalories">
+                            <select>
+                              <option><span id="calorieNumber">1500 </span> calories </option>
+                              <option><span id="calorieNumber"> 1800 </span>calories </option>
+                              <option> <span id="calorieNumber"> 2000 </span> calories </option>
+                            </select>
+                          </div>
                     </div>
                 </div>
             </div>
@@ -148,60 +116,30 @@
                     <p>Lunch</p>
                 </div>
                 <div class="column has-background-link-light">
-                    <div class="dropdown is-hoverable">
-                        <div class="dropdown-trigger">
-                          <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                            <span>Select Meal Options</span>
-                            <span class="icon is-small">
-                              <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                          </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                          <div class="dropdown-content">
-                            <div class="dropdown-item">
-                              <p>Healthy Meals</p>
-                            </div>
-                          </div>
-                          <div class="dropdown-content">
-                              <div class="dropdown-item">
-                                  <p>Cheat Meals</p>
+                  <div class="dropdown is-hoverable">
+                    <div class="column has-background-link-light">
+                        <div class="dropdown is-hoverable">
+                            <div class="select" id="selectLunch">
+                                <select>
+                                  <option>Recipe</option>
+                                  <option>Cheat Meal</option>
+                                </select>
                               </div>
                           </div>
-                        </div>
-                      </div>
-                        
-                       <div class="dropdown is-hoverable">
-                            <div class="dropdown-trigger">
-                              <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                                <span>Calorie Intake</span>
-                                <span class="icon is-small">
-                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                              </button>
-                            </div>
-                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                                <div class="dropdown-content">
-                                    <a href="#" class="dropdown-item">
-                                        800 Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        1000Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        1100 Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                      1300 Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        1500 Calories
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="dropdown is-hoverable">
+                            <div class="select" id="selectLunchCalories">
+                                <select>
+                                  <option><span id="calorieNumber">1500 </span> calories </option>
+                                  <option><span id="calorieNumber"> 1800 </span>calories </option>
+                                  <option><span id="calorieNumber"> 2000 </span> calories </option>
+                                </select>
+                              </div>
                         </div>
                     </div>
-                </div>
+                  </div>
+              </div>
+          </div>
+                       
         
             <div class="columns">
                 <div class="column is-one-third has-background-warning" id="dinnerDiv">
@@ -209,61 +147,32 @@
                 </div>  
                 <div class="column has-background-link-light">
                     <div class="dropdown is-hoverable">
-                     <div class="dropdown-trigger">
-                        <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                            <span>Select Meal Options</span>
-                            <span class="icon is-small">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                      <div class="dropdown-content">
-                        <div class="dropdown-item">
-                          <p>Healthy Meals</p>
-                        </div>
-                      </div>
-                      <div class="dropdown-content">
-                          <div class="dropdown-item">
-                              <p>Cheat Meals</p>
+                      <div class="column has-background-link-light">
+                          <div class="dropdown is-hoverable">
+                              <div class="select" id="selectDinner">
+                                  <select>
+                                    <option>Recipe</option>
+                                    <option>Cheat Meal</option>
+                                  </select>
+                                </div>
+                            </div>
+                          <div class="dropdown is-hoverable">
+                              <div class="select" id="selectDinnerCalories">
+                                  <select>
+                                    <option><span id="calorieNumber">1500 </span> calories </option>
+                                    <option><span id="calorieNumber"> 1800 </span>calories </option>
+                                    <option> <span id="calorieNumber"> 2000 </span> calories </option>
+                                  </select>
+                                </div>
                           </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="dropdown is-hoverable">
-                    <div class="dropdown-trigger">
-                      <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <span>Calorie Intake</span>
-                        <span class="icon is-small">
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                        <div class="dropdown-content">
-                            <a href="#" class="dropdown-item">
-                                800 Calories
-                            </a>
-                            <a href="#" class="dropdown-item">
-                                1000Calories
-                            </a>
-                            <a href="#" class="dropdown-item">
-                                1100 Calories
-                            </a>
-                            <a href="#" class="dropdown-item">
-                                1300 Calories
-                            </a>
-                            <a href="#" class="dropdown-item">
-                                1500 Calories
-                            </a>
-                        </div>
-                    </div>
                 </div>
+            </div>
             </div>
         </div>
     </div>
                         
-            
             
         <div class="columns">
             <div class="column is-4">
