@@ -266,3 +266,25 @@ a.navbar-item {
   display: flex;
   flex-wrap: wrap;
 }
+
+.result-containers {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.results-display {
+  padding: 1rem;
+}
+
+#monthDisplay + span{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+   
+#monthDisplay {
+  text-align: center;
+  color: #00d1b2;
+}
