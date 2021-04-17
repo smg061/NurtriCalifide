@@ -1,6 +1,7 @@
 let nav = 0;
 let clicked = null;
 let events = localStorage.getItem('meal') ? JSON.parse(localStorage.getItem('meals')) : [];
+// let events = localStorage.getItem('meals');
 
 const calendar = document.getElementById('calendar');
 const newEventModal = document.getElementById('newEventModal');
@@ -9,20 +10,31 @@ const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 const eventTitleMeals = document.getElementById('eventTitleMeals');
 retrievedMeals = JSON.parse(localStorage.getItem("meals"));
 
+
 // function that listens for a click on a day to open a window to display meal information
 function openModal(date) {
     clicked = date;
+  
+    var selectedMealDiv = document.createElement('div');
+    
+    // for loop that pulls the localStorage recipie information and calorie information to display in the modal popup window
+    for (var i = 0; i < retrievedMeals.length; i++) {
 
-    const mealForDay = events.find(e => e.date === clicked);
-    console.log(date);
-    console.log(clicked);
-    console.log(retrievedMeals);
+        if(retrievedMeals[i] !== null){
+            var recipeName = retrievedMeals[i].dish;
+            var calories = retrievedMeals[i].calories;
+            var mealEl = [recipeName, calories];
 
-    if (mealForDay) {
-        console.log(mealTime);
-    } else {
-        newEventModal.style.display = 'block';
+            selectedMealDiv.append(mealEl);
+            
+            console.log(mealEl);
+        } else {
+            newEventModal.style.display = 'block';
     }
+
+    eventTitleMeals.append(selectedMealDiv);
+    
+}
 
     backDrop.style.display = 'block';
 }
@@ -63,7 +75,7 @@ function load() {
 
         if (i > paddingDays) {
             daySquare.innerText = i - paddingDays;
-            daySquare.addEventListener('click', () => openModal(`${month + 1}/${i - paddingDays}/${year}`));
+            daySquare.addEventListener('click', () => openModal());
         } else {
             daySquare.classList.add('padding');
         }
