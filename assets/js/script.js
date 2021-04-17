@@ -201,6 +201,12 @@ function getNutritionixFoodFetchURL()
     return "https://trackapi.nutritionix.com/v2/search/instant?query=" + searchText // return appropriate URL to fetch
 }
 
+function getSelectedMealOption(dropMenuId)
+{
+    var selectedOption = $(`#${dropMenuId}`).find("option:selected").text()
+    return selectedOption;
+
+}
 
 /* from here on, all the code is related to the actual execution of the app */
 
@@ -263,11 +269,27 @@ $("#submit-search-breakfast").on("click", ()=>
 {
     // clear the html of the area where the food results are displayed
     $("#resultsDisplay").html("");
-    var fetchURL = getEdamamFetchURL("breakfast");
-    $("input").val("")
-    if (fetchURL != null)
+    selectedOption = getSelectedMealOption("selectBreakfast");
+
+    if (selectedOption == "Recipe")
     {
-        fetchEdamamRecipe(fetchURL, "#breakfastDiv");
+        var fetchURL = getEdamamFetchURL("breakfast");
+
+        $("input").val("")
+        if (fetchURL != null)
+        {
+            fetchEdamamRecipe(fetchURL, "#breakfastDiv");
+        }
+    }
+
+    else if(selectedOption == "Cheat Meal")
+    {
+        var fetchURL = getNutritionixFoodFetchURL("breakfast");
+        $("input").val("");
+        if (fetchURL != null)
+        {
+            fetchNutritionixFood(fetchURL, "#breakfastDiv")
+        }
     }
 })
 
@@ -308,17 +330,15 @@ $("div").on("click", "#btnAddRecipe", (event)=>
         // get the recipe link and ingredients list
         var recipeLink = myEvent.parent().parent().children($("#ingredientsList")).text().split("\n");
         console.log(recipeLink);
-        
         // flag variable to help with linear search PS: i'd wrap this mess in different functions if time was not a severe constraint
         var notInlist = true;
         // loop through all recipes
-        for ( var recipe of recipes) 
+        for (var recipe of recipes) 
         {
             // if the current recipeName is already in the recipes array, set alreadyInList to true
             if (recipeName == recipe[0])
             {
                 notInlist = false; // if any instance of the recipe turns out in the recipes array, set the flag to false
-                console.log("code reached")
             }
         }
         // only push new recipe if it's not in the array already
@@ -388,4 +408,5 @@ $("#recipesBtn").on("click", ()=>
 // TODO: implement nutritionix search and display 
 
 // TODO: implement day-dependent storage 
+
 
