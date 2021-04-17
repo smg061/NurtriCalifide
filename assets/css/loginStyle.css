@@ -1,15 +1,18 @@
+/*Set font style for body*/
 body{
   font-family: 'Roboto',sans-serif;
 }
+/*Position and creates size for logo image*/
 img {
   float: left;
   width: 95px;
 }
+/*Set size and boldness to Nutricalifide Title*/
 .maincontainer{
   font-size:60px ;
   font-weight: bolder;
 }
-  
+/*Sets styles for Username and Password colubms*/ 
 input.infofield{
   width: 100%;
   margin: 8px 0;
@@ -19,7 +22,7 @@ input.infofield{
   padding:30px
 }
   
-  
+/*Sets styles for login button*/ 
 button {
   background-color: turquoise;
   font-size: 20px;
@@ -29,16 +32,16 @@ button {
   margin: 8px 0;
   width: 100%;
 }
-  
+/*Creates opacity when cursor hovers over button*/
 button:hover {
   opacity: 0.5;
 }
-
+/*Set styles for checkbox*/
 .checkbox{
   margin: 8px 0;
   padding: 14px 20px;
 }
-  
+/*Set styles for canel button*/
 .cancelbtn {
   width: auto;
   background-color: #f44336;
