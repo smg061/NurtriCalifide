@@ -84,7 +84,7 @@ function createFoodCard(recipeName, calories, img, recipeLink, ingredientsList)
      var imgEl = $("<img>", {src:img, class: "card-image"})
      var recipeLinkEl = $("<p>", {id:"#ingredientsList", text: `${recipeLink} \n ${ingredientsList}`, style:"display: none"})
      var submitButtonDiv = $("<div>", {class: "control"});
-     var submitButton = $("<button>", {class: "button is-primary", id: "btnAddRecipe", style: "display:flex-inline"});
+     var submitButton = $("<button>", {class: "button is-primary", id: "btnAddRecipe", style: "display:flex-inline;width:100%",html: "Add recipe"});
     // set the element attributes according to the function parameters
      headerEl.text(recipeName + "\n");
      var caloriesEl = $("<p>", {class: "card-body", id: "calories-text"});
@@ -195,12 +195,18 @@ function fetchNutritionixFood(FETCH_URL, mealTime){
 }
 
 // get a valid url to make an API request for Nutritionix
-function getNutritionixFoodFetchURL()
+function getNutritionixFoodFetchURL(mealType)
 {
-    var searchText = $("input").val(); // get the value of the input text
+    var searchText = $(`#${mealType}`).val() // get the value of the input text
     return "https://trackapi.nutritionix.com/v2/search/instant?query=" + searchText // return appropriate URL to fetch
 }
 
+function getSelectedMealOption(dropMenuId)
+{
+    var selectedOption = $(`#${dropMenuId}`).find("option:selected").text()
+    return selectedOption;
+
+}
 
 /* from here on, all the code is related to the actual execution of the app */
 
@@ -263,11 +269,27 @@ $("#submit-search-breakfast").on("click", ()=>
 {
     // clear the html of the area where the food results are displayed
     $("#resultsDisplay").html("");
-    var fetchURL = getEdamamFetchURL("breakfast");
-    $("input").val("")
-    if (fetchURL != null)
+    selectedOption = getSelectedMealOption("selectBreakfast");
+
+    if (selectedOption == "Recipe")
     {
-        fetchEdamamRecipe(fetchURL, "#breakfastDiv");
+        var fetchURL = getEdamamFetchURL("breakfast");
+
+        $("input").val("")
+        if (fetchURL != null)
+        {
+            fetchEdamamRecipe(fetchURL, "#breakfastDiv");
+        }
+    }
+
+    else if(selectedOption == "Cheat Meal")
+    {
+        var fetchURL = getNutritionixFoodFetchURL("breakfast");
+        $("input").val("");
+        if (fetchURL != null)
+        {
+            fetchNutritionixFood(fetchURL, "#breakfastDiv")
+        }
     }
 })
 
@@ -276,20 +298,56 @@ $("#submit-search-lunch").on("click", ()=>
 {
     // clear the html of the area where the food results are displayed
     $("#resultsDisplay").html("");
-    var fetchURL = getEdamamFetchURL("lunch");
-    $("input").val("")
-    fetchEdamamRecipe(fetchURL, "#lunchDiv");
+    selectedOption = getSelectedMealOption("selectLunch");
+
+    if (selectedOption == "Recipe")
+    {
+        var fetchURL = getEdamamFetchURL("lunch");
+
+        $("input").val("")
+        if (fetchURL != null)
+        {
+            fetchEdamamRecipe(fetchURL, "#lunchDiv");
+        }
+    }
+
+    else if(selectedOption == "Cheat Meal")
+    {
+        var fetchURL = getNutritionixFoodFetchURL("lunch");
+        $("input").val("");
+        if (fetchURL != null)
+        {
+            fetchNutritionixFood(fetchURL, "#lunchDiv")
+        }
+    }
 })
 // even listener for dinner section searchbar
 $("#submit-search-dinner").on("click", ()=> 
 {
     // clear the html of the area where the food results are displayed
     $("#resultsDisplay").html("");
-    var fetchURL = getEdamamFetchURL("dinner");
-    $("input").val("")
-    fetchEdamamRecipe(fetchURL, "#dinnerDiv");
-    $("#mealPlanDiv").html("");
+    selectedOption = getSelectedMealOption("selectDinner");
 
+    if (selectedOption == "Recipe")
+    {
+        var fetchURL = getEdamamFetchURL("dinner");
+
+        $("input").val("")
+        if (fetchURL != null)
+        {
+            fetchEdamamRecipe(fetchURL, "#dinnerDiv");
+        }
+    }
+
+    else if(selectedOption == "Cheat Meal")
+    {
+        var fetchURL = getNutritionixFoodFetchURL("dinner");
+        $("input").val("");
+        if (fetchURL != null)
+        {
+            fetchNutritionixFood(fetchURL, "#dinnerDiv")
+        }
+    }
 })
 
 // add event listener to dynamically added buttons from the search results
@@ -308,17 +366,15 @@ $("div").on("click", "#btnAddRecipe", (event)=>
         // get the recipe link and ingredients list
         var recipeLink = myEvent.parent().parent().children($("#ingredientsList")).text().split("\n");
         console.log(recipeLink);
-        
         // flag variable to help with linear search PS: i'd wrap this mess in different functions if time was not a severe constraint
         var notInlist = true;
         // loop through all recipes
-        for ( var recipe of recipes) 
+        for (var recipe of recipes) 
         {
             // if the current recipeName is already in the recipes array, set alreadyInList to true
             if (recipeName == recipe[0])
             {
                 notInlist = false; // if any instance of the recipe turns out in the recipes array, set the flag to false
-                console.log("code reached")
             }
         }
         // only push new recipe if it's not in the array already
@@ -367,7 +423,6 @@ $("#mealPlanBtn").on("click", ()=>
     }
 })
 
-
 $("#recipesBtn").on("click", ()=>
 {
     var recipePlanDiv = $("<div>", {id: "recipePlanDiv", class: "column is-full"})
@@ -383,9 +438,17 @@ $("#recipesBtn").on("click", ()=>
     }
 })
 
-// TODO: replace dropdown links with selectable dropdown forms
+$("#goalReviewBtn").on("click", ()=> 
+{
+    var totalCalories = getTotalCalories();
+    console.log(totalCalories)
+    
+    var goalEL = $("<div>", {class: "card"});
+    var cardEl = $("<div>", {class: "card"});
+    var caloriesEl = $("<h5>", { class: "card-text", text: `Your meal plan calories: ${totalCalories}`, style: "color: black"});
+    cardEl.append(caloriesEl);
+    goalEL.append(cardEl);
+    console.log(cardEl);
+    $("#goalReviewBtn").parent().append(goalEL);
 
-// TODO: implement nutritionix search and display 
-
-// TODO: implement day-dependent storage 
-
+})

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class = "has-navbar-fixed-top" lang="en">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -23,9 +23,10 @@
                  Your number 1 meal recipes provider~
               </p>
             </div>
-        </section>
-        <!-- navbar section -->
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+          </section>
+
+        <!-- navbar section -->  
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
           
               <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -88,55 +89,11 @@
                 </div>
                 <div class="column has-background-link-light">
                     <div class="dropdown is-hoverable">
-                      <div class="dropdown-trigger">
-                         <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                             <span>Select Meal Options</span>
-                             <span class="icon is-small">
-                             <i class="fas fa-angle-down" aria-hidden="true"></i>
-                             </span>
-                          </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                      <div class="dropdown-content">
-                        <div class="dropdown-item">
-                          <p>Healthy Meals</p>
-                        </div>
-                      </div>
-                      <div class="dropdown-content">
-                          <div class="dropdown-item">
-                              <p>Cheat Meals</p>
-                          </div>
-                      </div>
-                </div>
-            </div>
-
-                    <div class="dropdown is-hoverable">
-                        <div class="dropdown-trigger">
-                          <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                            <span>Calorie Intake</span>
-                            <span class="icon is-small">
-                              <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                          </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                            <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">
-                                    800 Calories
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    1000Calories
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    1100 Calories
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    1300 Calories
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    1500 Calories
-                                </a>
-                            </div>
+                        <div class="select" id="selectBreakfast">
+                            <select>
+                                <option>Recipe</option>
+                                <option>Cheat Meal</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -148,59 +105,16 @@
                 </div>
                 <div class="column has-background-link-light">
                     <div class="dropdown is-hoverable">
-                        <div class="dropdown-trigger">
-                          <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                            <span>Select Meal Options</span>
-                            <span class="icon is-small">
-                              <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                          </button>
-                        </div>
-                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                          <div class="dropdown-content">
-                            <div class="dropdown-item">
-                              <p>Healthy Meals</p>
-                            </div>
-                          </div>
-                          <div class="dropdown-content">
-                              <div class="dropdown-item">
-                                  <p>Cheat Meals</p>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-                        
-                       <div class="dropdown is-hoverable">
-                            <div class="dropdown-trigger">
-                              <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                                <span>Calorie Intake</span>
-                                <span class="icon is-small">
-                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                              </button>
-                            </div>
-                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                                <div class="dropdown-content">
-                                    <a href="#" class="dropdown-item">
-                                        800 Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        1000Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        1100 Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                      1300 Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        1500 Calories
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="select" id="selectLunch">
+                            <select>
+                                <option>Recipe</option>
+                                <option>Cheat Meal</option>
+                            </select>
                         </div>
                     </div>
                 </div>
+            </div>
+                       
         
             <div class="columns">
                 <div class="column is-one-third has-background-warning" id="dinnerDiv">
@@ -208,72 +122,26 @@
                 </div>  
                 <div class="column has-background-link-light">
                     <div class="dropdown is-hoverable">
-                     <div class="dropdown-trigger">
-                        <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                            <span>Select Meal Options</span>
-                            <span class="icon is-small">
-                            <i class="fas fa-angle-down" aria-hidden="true"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                      <div class="dropdown-content">
-                        <div class="dropdown-item">
-                          <p>Healthy Meals</p>
-                        </div>
-                      </div>
-                      <div class="dropdown-content">
-                          <div class="dropdown-item">
-                              <p>Cheat Meals</p>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="dropdown is-hoverable">
-                    <div class="dropdown-trigger">
-                      <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <span>Calorie Intake</span>
-                        <span class="icon is-small">
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                        <div class="dropdown-content">
-                            <a href="#" class="dropdown-item">
-                                800 Calories
-                            </a>
-                            <a href="#" class="dropdown-item">
-                                1000Calories
-                            </a>
-                            <a href="#" class="dropdown-item">
-                                1100 Calories
-                            </a>
-                            <a href="#" class="dropdown-item">
-                                1300 Calories
-                            </a>
-                            <a href="#" class="dropdown-item">
-                                1500 Calories
-                            </a>
+                        <div class="select" id="selectDinner">
+                            <select>
+                                <option>Recipe</option>
+                                <option>Cheat Meal</option>
+                            </select>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
                         
             
-            
-        <div class="columns">
-            <div class="column is-4">
-                <button class="viewPlan button is-primary is-large is-fullwidth" id="mealPlanBtn">View Meal Search History</button>
-            </div>
+            <div class="columns">
+                <div class="column is-4">
+                    <button class="viewPlan button is-primary is-large is-fullwidth" id="mealPlanBtn">View Meal Search History</button>
+                </div>
             <div class="column is-4">
                 <button class="recipes button is-primary is-large is-fullwidth" id="recipesBtn">Added Recipes</button>
             </div>
             <div class="column is-4">
-                <button class="goalReview button is-primary is-large is-fullwidth">Review This Week's Goal</button>
-
+                <button class="goalReview button is-primary is-large is-fullwidth" id="goalReviewBtn">Review This Week's Goal</button>
             </div>
           </div>
         
@@ -301,8 +169,9 @@
         <div id="newEventModal">
             <h2>Selected Meals</h2>
             
-            <input id="eventTitleMeals" placeholder="Selected Meals">
-            <button id="viewMeals">Meals of the day</button>
+            <object id="eventTitleMeals" placeholder="Selected Meals"></object>            
+            <button id="closeButton">Close</button>
+
         </div>
 
         <div id="modalBackDrop"></div>
