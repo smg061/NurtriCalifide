@@ -8,6 +8,7 @@ const backDrop = document.getElementById('modalBackDrop');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const eventTitleMeals = document.getElementById('eventTitleMeals');
 
+// function that listens for a click on a day to open a window to display meal information
 function openModal(date) {
     clicked = date;
 
@@ -22,6 +23,7 @@ function openModal(date) {
     backDrop.style.display = 'block';
 }
 
+// function that loads the calendar and uses the localedate string US to pull correct calendar date information to display
 function load() {
     const dt = new Date();
 
@@ -47,8 +49,10 @@ function load() {
 
     document.getElementById('monthDisplay').innerText = `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
 
+    // empty calendar string that will be filled by the daySquare const to display correct day information
     calendar.innerHTML = '';
 
+    // add the padding and blank spaces for day that do not appear on the calendar yet after running the date string
     for (let i = 1; i <= paddingDays + daysInMonth; i++) {
         const daySquare = document.createElement('div');
         daySquare.classList.add('day');
@@ -64,6 +68,7 @@ function load() {
     }
 }
 
+// Call function that closes the Modal or window that appears when you click on a day
 function closeModal() {
     newEventModal.style.display = 'none'; // add meal information here 
     backDrop.style.display = 'none';
@@ -83,6 +88,7 @@ function initButtons() {
         load();
     });
 
+    // Button that close the popup window that displays after you click a day
     document.getElementById('closeButton').addEventListener('click', closeModal);
 }
 
