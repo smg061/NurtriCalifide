@@ -423,7 +423,6 @@ $("#mealPlanBtn").on("click", ()=>
     }
 })
 
-
 $("#recipesBtn").on("click", ()=>
 {
     var recipePlanDiv = $("<div>", {id: "recipePlanDiv", class: "column is-full"})
@@ -439,10 +438,17 @@ $("#recipesBtn").on("click", ()=>
     }
 })
 
-// TODO: replace dropdown links with selectable dropdown forms
+$("#goalReviewBtn").on("click", ()=> 
+{
+    var totalCalories = getTotalCalories();
+    console.log(totalCalories)
+    
+    var goalEL = $("<div>", {class: "card"});
+    var cardEl = $("<div>", {class: "card"});
+    var caloriesEl = $("<h5>", { class: "card-text", text: `Your meal plan calories: ${totalCalories}`, style: "color: black"});
+    cardEl.append(caloriesEl);
+    goalEL.append(cardEl);
+    console.log(cardEl);
+    $("#goalReviewBtn").parent().append(goalEL);
 
-// TODO: implement nutritionix search and display 
-
-// TODO: implement day-dependent storage 
-
-
+})
