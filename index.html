@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class = "has-navbar-fixed-top" lang="en">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -24,8 +24,9 @@
               </p>
             </div>
           </section>
-        <!-- navbar section -->
-        <nav class="navbar" role="navigation" aria-label="main navigation">
+
+        <!-- navbar section -->  
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
           
               <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -210,8 +211,9 @@
         <div id="newEventModal">
             <h2>Selected Meals</h2>
             
-            <input id="eventTitleMeals" placeholder="Selected Meals">
-            <button id="viewMeals">Meals of the day</button>
+            <object id="eventTitleMeals" placeholder="Selected Meals"></object>            
+            <button id="closeButton">Close</button>
+
         </div>
 
         <div id="modalBackDrop"></div>
