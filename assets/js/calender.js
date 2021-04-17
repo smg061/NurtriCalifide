@@ -7,12 +7,16 @@ const newEventModal = document.getElementById('newEventModal');
 const backDrop = document.getElementById('modalBackDrop');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const eventTitleMeals = document.getElementById('eventTitleMeals');
+retrievedMeals = JSON.parse(localStorage.getItem("meals"));
 
 // function that listens for a click on a day to open a window to display meal information
 function openModal(date) {
     clicked = date;
 
     const mealForDay = events.find(e => e.date === clicked);
+    console.log(date);
+    console.log(clicked);
+    console.log(retrievedMeals);
 
     if (mealForDay) {
         console.log(mealTime);
