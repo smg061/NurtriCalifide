@@ -84,7 +84,7 @@ function createFoodCard(recipeName, calories, img, recipeLink, ingredientsList)
      var imgEl = $("<img>", {src:img, class: "card-image"})
      var recipeLinkEl = $("<p>", {id:"#ingredientsList", text: `${recipeLink} \n ${ingredientsList}`, style:"display: none"})
      var submitButtonDiv = $("<div>", {class: "control"});
-     var submitButton = $("<button>", {class: "button is-primary", id: "btnAddRecipe", style: "display:flex-inline"});
+     var submitButton = $("<button>", {class: "button is-primary", id: "btnAddRecipe", style: "display:flex-inline;width:100%",html: "Add recipe"});
     // set the element attributes according to the function parameters
      headerEl.text(recipeName + "\n");
      var caloriesEl = $("<p>", {class: "card-body", id: "calories-text"});
