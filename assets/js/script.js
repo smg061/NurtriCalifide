@@ -195,9 +195,9 @@ function fetchNutritionixFood(FETCH_URL, mealTime){
 }
 
 // get a valid url to make an API request for Nutritionix
-function getNutritionixFoodFetchURL()
+function getNutritionixFoodFetchURL(mealType)
 {
-    var searchText = $("input").val(); // get the value of the input text
+    var searchText = $(`#${mealType}`).val() // get the value of the input text
     return "https://trackapi.nutritionix.com/v2/search/instant?query=" + searchText // return appropriate URL to fetch
 }
 
@@ -298,20 +298,56 @@ $("#submit-search-lunch").on("click", ()=>
 {
     // clear the html of the area where the food results are displayed
     $("#resultsDisplay").html("");
-    var fetchURL = getEdamamFetchURL("lunch");
-    $("input").val("")
-    fetchEdamamRecipe(fetchURL, "#lunchDiv");
+    selectedOption = getSelectedMealOption("selectLunch");
+
+    if (selectedOption == "Recipe")
+    {
+        var fetchURL = getEdamamFetchURL("lunch");
+
+        $("input").val("")
+        if (fetchURL != null)
+        {
+            fetchEdamamRecipe(fetchURL, "#lunchDiv");
+        }
+    }
+
+    else if(selectedOption == "Cheat Meal")
+    {
+        var fetchURL = getNutritionixFoodFetchURL("lunch");
+        $("input").val("");
+        if (fetchURL != null)
+        {
+            fetchNutritionixFood(fetchURL, "#lunchDiv")
+        }
+    }
 })
 // even listener for dinner section searchbar
 $("#submit-search-dinner").on("click", ()=> 
 {
     // clear the html of the area where the food results are displayed
     $("#resultsDisplay").html("");
-    var fetchURL = getEdamamFetchURL("dinner");
-    $("input").val("")
-    fetchEdamamRecipe(fetchURL, "#dinnerDiv");
-    $("#mealPlanDiv").html("");
+    selectedOption = getSelectedMealOption("selectDinner");
 
+    if (selectedOption == "Recipe")
+    {
+        var fetchURL = getEdamamFetchURL("dinner");
+
+        $("input").val("")
+        if (fetchURL != null)
+        {
+            fetchEdamamRecipe(fetchURL, "#dinnerDiv");
+        }
+    }
+
+    else if(selectedOption == "Cheat Meal")
+    {
+        var fetchURL = getNutritionixFoodFetchURL("dinner");
+        $("input").val("");
+        if (fetchURL != null)
+        {
+            fetchNutritionixFood(fetchURL, "#dinnerDiv")
+        }
+    }
 })
 
 // add event listener to dynamically added buttons from the search results
