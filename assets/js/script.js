@@ -4,7 +4,8 @@ AP_ID = "8644d665";
 
 API_KEY = "64d713a99c6d8aab9d04c626a6c6ab94";
 
-selected_meals = [];
+var selected_meals = [];
+var recipes = [];
 
 function fetchEdamamRecipe(FETCH_URL, mealTime) {
     fetch (FETCH_URL, 
@@ -30,7 +31,9 @@ function fetchEdamamRecipe(FETCH_URL, mealTime) {
             var recipeName = data.hits[i].recipe.label;
             var calories = (data.hits[i].recipe.calories/ data.hits[i].recipe.yield).toFixed(0);
             var img = data.hits[i].recipe.image;
-            var foodCard = createFoodCard(recipeName, calories, img);
+            var recipeLink = data.hits[i].recipe.url;
+            var ingredienstList = data.hits[i].recipe.ingredientLines;
+            var foodCard = createFoodCard(recipeName, calories, img, recipeLink, ingredienstList);
             var resultsDiv = $("<div>", { class: "card", id: "results-display", style: "font-size: 1rem; width: 10rem"})
             resultsDiv.append(foodCard)
             $(mealTime).append(resultsDiv);
@@ -38,7 +41,6 @@ function fetchEdamamRecipe(FETCH_URL, mealTime) {
         }
     })
 }
-
 
 // this function constructs and returns a searchbar with a submit button
 function constructSearchBar(mealtime) 
@@ -48,7 +50,7 @@ function constructSearchBar(mealtime)
     var searchField = $("<div>", {class: "control"});
     var textInput = $("<input>", {class: "input", type: "text", placeholder:"Search for a meal", id:mealtime});
     var submitButtonDiv = $("<div>", {class: "control"});
-    var submitButton = $("<button>", {class: "button is-primary", id: "submit-search-edamam-"+mealtime});
+    var submitButton = $("<button>", {class: "button is-primary", id: "submit-search-"+mealtime});
     // put all the html elements together
     searchField.append(textInput);
     submitButtonDiv.append(submitButton);
@@ -72,14 +74,15 @@ function getEdamamFetchURL(mealtype)
 }
 
 // this function creates a card element with the photo, name, and calories of a recipe
-function createFoodCard(recipeName, calories, img)
+function createFoodCard(recipeName, calories, img, recipeLink, ingredientsList)
 {
      //containers for the food card elements
      var headerEl = $("<h5>", {class: "card-header"})    
      var cardEl = $("<div>", {class: "card", id: "recipe-display"})
-     var bodyEl = $("<div>", {class: ""})
+     var bodyEl = $("<div>", {class: "card"})
      var columnEl = $("<div>", {class:"column", id:"food-result", style: "width: 10rem;"});
      var imgEl = $("<img>", {src:img, class: "card-image"})
+     var recipeLinkEl = $("<p>", {id:"#ingredientsList", text: `${recipeLink} \n ${ingredientsList}`, style:"display: none"})
      var submitButtonDiv = $("<div>", {class: "control"});
      var submitButton = $("<button>", {class: "button is-primary", id: "btnAddRecipe", style: "display:flex-inline"});
     // set the element attributes according to the function parameters
@@ -90,7 +93,9 @@ function createFoodCard(recipeName, calories, img)
      bodyEl.append(headerEl);
      bodyEl.append(imgEl)
      bodyEl.append(caloriesEl);
+     bodyEl.append(recipeLinkEl)
      cardEl.append(bodyEl)
+
      submitButtonDiv.append(submitButton);
      //columnEl.append(cardEl);
      cardEl.append(submitButtonDiv);
@@ -101,22 +106,41 @@ function createFoodCard(recipeName, calories, img)
 
 // modified version of above function that does not have a button
 
-function createMealPlanCard(recipeName, calories, img)
+function createMealPlanCard(recipeName, calories)////img)
 {
      //containers for the food card elements
      var headerEl = $("<h5>", {class: "card-header"})    
      var cardEl = $("<div>", {class: "card", id: "recipe-display"})
      var bodyEl = $("<div>", {class: ""})
-     var columnEl = $("<div>", {class:"column", id:"food-result", style: "width: 10rem;"});
-     var imgEl = $("<img>", {src:img, class: "card-image"})
+     //var imgEl = $("<img>", {src:img, class: "card-image"})
     // set the element attributes according to the function parameters
      headerEl.text(recipeName + "\n");
      var caloriesEl = $("<p>", {class: "card-body", id: "calories-text"});
      caloriesEl.text("calories: " +  calories + "\n");
      // put together all the elements
      bodyEl.append(headerEl);
-     bodyEl.append(imgEl)
+     //bodyEl.append(imgEl)
      bodyEl.append(caloriesEl);
+     cardEl.append(bodyEl)
+     // return the food card element
+     return cardEl
+
+}
+
+// modified version of the above function that includes an <a> element for a link to the recipe
+function createRecipeCard(recipeName, recipeLink)
+{
+     //containers for the food card elements
+     var headerEl = $("<h5>", {class: "card-header", style: "font-weight: bold"})    
+     var cardEl = $("<div>", {class: "card", id: "recipe-display"})
+     var bodyEl = $("<div>", {class: ""})
+    // set the element attributes according to the function parameters
+     headerEl.text(recipeName + "\n");
+     var recipeLinkEl = $("<a>", {class: "card-body", id: "link-text", href: recipeLink, text: "See recipe"});
+     // put together all the elements
+     bodyEl.append(headerEl);
+     //bodyEl.append(imgEl)
+     bodyEl.append(recipeLinkEl);
      cardEl.append(bodyEl)
      // return the food card element
      return cardEl
@@ -130,7 +154,6 @@ function createMealPlanCard(recipeName, calories, img)
 */
 
 // this function fetches data from the nutritionix API. it already has the appropriate headers built into it
-
 function fetchNutritionixFood(FETCH_URL, mealTime){
     fetch (FETCH_URL, 
         {
@@ -155,13 +178,13 @@ function fetchNutritionixFood(FETCH_URL, mealTime){
     })
 
     .then (data => {
-        console.log(data)
         var resultsDiv = $("<div>", { class: "card", id: "resultsDisplay", style: "font-size: 1rem;"})
         for (var i = 0; i < 5; i++)
         {
             var recipeName = data.branded[i].brand_name_item_name;
             var calories = data.branded[i].nf_calories.toFixed(0);
             var img = data.branded[i].photo.thumb;
+            
 
             var foodCard = createFoodCard(recipeName, calories, img);
             resultsDiv.append(foodCard)
@@ -171,14 +194,62 @@ function fetchNutritionixFood(FETCH_URL, mealTime){
     })
 }
 
-//
+// get a valid url to make an API request for Nutritionix
 function getNutritionixFoodFetchURL()
 {
     var searchText = $("input").val(); // get the value of the input text
     return "https://trackapi.nutritionix.com/v2/search/instant?query=" + searchText // return appropriate URL to fetch
-
 }
 
+
+/* from here on, all the code is related to the actual execution of the app */
+
+// stores the selected meals to local storage; this function gets called every time a meal gets added to selected_meals
+function storeMeals()
+{  
+    if(selected_meals.length !== 0)
+    {
+        localStorage.setItem("meals", JSON.stringify(selected_meals));    
+    } 
+    if(recipes.length !== 0)
+    {
+        localStorage.setItem("recipes", JSON.stringify(recipes));
+    }
+}
+
+// this function retrieves the meals and recipes arrays from local storage
+function retrieveMeals()
+{
+    retrievedMeals = JSON.parse(localStorage.getItem("meals"));
+    retrievedRecipes = JSON.parse(localStorage.getItem("recipes"));
+    // set the local selected_meals array to the stored array only if the stored one exists
+    if (retrievedMeals != undefined && retrievedMeals.length != 0)
+    {
+        selected_meals = retrievedMeals;
+    }
+    // same for recipes
+    if(retrievedRecipes != undefined && retrievedRecipes.length !=0 )
+    {
+        recipes = retrievedRecipes;
+    }
+}
+
+// this function adds and returns the total calories for the current mealplan
+function getTotalCalories()
+{
+    totalCalories = 0; // rolling total 
+    for (meal of selected_meals)
+    {
+        if(meal != null) // in case user hasn't selected one of the three meals
+        {
+            totalCalories += parseInt(meal.calories); // if parseInt() isnt used, the function thinks calories are strings and just concatenates the numbers
+        }
+    }
+    return totalCalories;
+}
+
+// load meals if any have been stored before
+retrieveMeals();
 // searchbars for each section
 var searchBarBreakfast = constructSearchBar("breakfast");
 var searchBarLunch = constructSearchBar("lunch");
@@ -187,9 +258,8 @@ var searchBarDinner = constructSearchBar("dinner");
 $("#breakfastDiv").append(searchBarBreakfast)
 $("#lunchDiv").append(searchBarLunch);
 $("#dinnerDiv").append(searchBarDinner);
-
 // individual event listeners for each search bar
-$("#submit-search-edamam-breakfast").on("click", ()=> 
+$("#submit-search-breakfast").on("click", ()=> 
 {
     // clear the html of the area where the food results are displayed
     $("#resultsDisplay").html("");
@@ -198,21 +268,20 @@ $("#submit-search-edamam-breakfast").on("click", ()=>
     if (fetchURL != null)
     {
         fetchEdamamRecipe(fetchURL, "#breakfastDiv");
-
     }
 })
 
-$("#submit-search-edamam-lunch").on("click", ()=> 
+// event listener to display search results on lunch section
+$("#submit-search-lunch").on("click", ()=> 
 {
     // clear the html of the area where the food results are displayed
     $("#resultsDisplay").html("");
     var fetchURL = getEdamamFetchURL("lunch");
     $("input").val("")
     fetchEdamamRecipe(fetchURL, "#lunchDiv");
-
 })
-
-$("#submit-search-edamam-dinner").on("click", ()=> 
+// even listener for dinner section searchbar
+$("#submit-search-dinner").on("click", ()=> 
 {
     // clear the html of the area where the food results are displayed
     $("#resultsDisplay").html("");
@@ -223,48 +292,100 @@ $("#submit-search-edamam-dinner").on("click", ()=>
 
 })
 
-
-$(document).on("click", "#btnAddRecipe", (event)=>
+// add event listener to dynamically added buttons from the search results
+$("div").on("click", "#btnAddRecipe", (event)=>
 {
     event.preventDefault();
     myEvent = $(event.target)
     if (myEvent.is("button"))
     {
-        var cardText = (myEvent.parent().parent().parent().children($("p")).text()); // a convoluted way of accessing the card text
+        var cardText = myEvent.parent().parent().parent().children($("p")).text(); // a convoluted way of accessing the card text
         var textSplit = cardText.split("\n"); // split the card text into the different components using '\n' as a separator
         var recipeName = textSplit[0]; // recipe name is the first element
         var calorieNum = textSplit[1].split(":")[1].trim() // calories are the second element, but to get only the number we must split again with ":" as separator
-        var mealTime = $("#btnAddRecipe").parent().parent().parent().parent().text().trim().split("\n")[0]
-        console.log(recipeName);
-        console.log(calorieNum);
-        selected_meals.push({meal: mealTime, dish: recipeName, calories: calorieNum, date: new Date()});
+        var mealTime = $("#btnAddRecipe").parent().parent().parent().parent().text().trim().split("\n")[0] // convoluted way of getting the section name (ie breakfast lunch or dinner) because traversing DOM with dynamic elements is hard, as I've found out
+        var image = (myEvent.parent().parent().closest("img"));
+        // get the recipe link and ingredients list
+        var recipeLink = myEvent.parent().parent().children($("#ingredientsList")).text().split("\n");
+        console.log(recipeLink);
+        
+        // flag variable to help with linear search PS: i'd wrap this mess in different functions if time was not a severe constraint
+        var notInlist = true;
+        // loop through all recipes
+        for ( var recipe of recipes) 
+        {
+            // if the current recipeName is already in the recipes array, set alreadyInList to true
+            if (recipeName == recipe[0])
+            {
+                notInlist = false; // if any instance of the recipe turns out in the recipes array, set the flag to false
+                console.log("code reached")
+            }
+        }
+        // only push new recipe if it's not in the array already
+        if (notInlist)
+        {
+            recipes.push(recipeLink);
+        }
+        // store the meals in the appropriate index
+        if (mealTime == "Breakfast") 
+        {
+            selected_meals[0] = ({meal: mealTime, dish: recipeName, calories: calorieNum, date: new Date(), img: ""}) 
+        }
+        else if (mealTime == "Lunch")
+        {
+            selected_meals[1] = ({meal: mealTime, dish: recipeName, calories: calorieNum, date: new Date(), img: ""}) 
+
+        }
+        else if (mealTime == "Dinner")
+        {
+            selected_meals[2] = ({meal: mealTime, dish: recipeName, calories: calorieNum, date: new Date(), img: ""}) 
+        }
     }
     $(".card").html("");
     $("#mealPlanDiv").html("");
-
+    storeMeals();
 
 })
-
-
-
+// event listener that shows the user's currently selected meals
 $("#mealPlanBtn").on("click", ()=> 
 {
     // make a specific function to make card to select 
-    
     $("#mealPlanDiv").html("");
+    $("#mealTitle").html("");
     $("#mealPlanDiv").text("");
     var mealPlanDiv = $("<div>", {id: "mealPlanDiv", class: "column is-full"})
     for (let meal of selected_meals)
     {
-        
-        var headerTypeOfMeal = $("<h5>", {text: meal.meal, style: "color: black;"});
-        //headerTypeOfMeal.text(meal.meal);
-        var mealCard = createMealPlanCard(meal.dish, meal.calories, "null");
-        mealPlanDiv.append(headerTypeOfMeal);
-        mealPlanDiv.append(mealCard);
-        $("#mealPlanBtn").parent().append(mealPlanDiv);
+        if(meal != null) // in case the user hasn't selected on of the meals 
+        {
+            var headerTypeOfMeal = $("<h5>", {text: meal.meal, style: "color: black; font-weight:bold;", id: "mealTitle"});
+            var mealCard = createMealPlanCard(meal.dish, meal.calories, "null");
+            mealPlanDiv.append(headerTypeOfMeal);
+            mealPlanDiv.append(mealCard);
+            $("#mealPlanBtn").parent().append(mealPlanDiv);
+        }
     }
-
-    $("#mealPlanDiv").html("");
-    
 })
+
+
+$("#recipesBtn").on("click", ()=>
+{
+    var recipePlanDiv = $("<div>", {id: "recipePlanDiv", class: "column is-full"})
+    $("#recipePlanDiv").html("");
+    for (let recipe of recipes)
+    {
+        var recipeName = recipe[0];
+        var recipeLink = recipe[2];
+        var recipeCard = createRecipeCard(recipeName, recipeLink, "null");
+        recipePlanDiv.append(recipeCard);
+        $("#recipesBtn").parent().append(recipePlanDiv);
+
+    }
+})
+
+// TODO: replace dropdown links with selectable dropdown forms
+
+// TODO: implement nutritionix search and display 
+
+// TODO: implement day-dependent storage 
+
