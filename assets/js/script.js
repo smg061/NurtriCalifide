@@ -367,6 +367,7 @@ $("#mealPlanBtn").on("click", ()=>
     }
 })
 
+
 $("#recipesBtn").on("click", ()=>
 {
     var recipePlanDiv = $("<div>", {id: "recipePlanDiv", class: "column is-full"})
@@ -387,3 +388,4 @@ $("#recipesBtn").on("click", ()=>
 // TODO: implement nutritionix search and display 
 
 // TODO: implement day-dependent storage 
+
