@@ -62,7 +62,7 @@ a.navbar-item {
   padding: 5px;
   border-radius: 5px;
   color: rgb(29, 28, 28);
-}
+ }
 
 #footer {
   padding: 10px;
@@ -76,25 +76,35 @@ a.navbar-item {
   background-color:#92a1d1;
 }
 #container {
-  width: 770px;
+  width: 67%;
+  padding-bottom: 5rem;
+  margin-left: auto;
+  margin-right: auto;  
 }
 #weekdays {
   width: 100%;
   display: flex;
   color: #247BA0;
+  justify-content: center;
 }
 #weekdays div {
   width: 100px;
   padding: 10px;
 }
 #calendar {
-  width: 100%;
+  width: 65%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
 }
 #monthDisplay{
   color: darkblue;
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+  font-size: 3rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
 }
 .day {
   width: 100px;
@@ -235,34 +245,3 @@ a.navbar-item {
   padding-top: 2rem;
 }
 
-#monthDisplay {
-  color: darkblue;
-  font-size: 3rem;
-  font-weight: 600;
-  padding-bottom: 1rem;
-  
-}
-
-#monthDisplay + span,
-#monthDisplay {
-  padding-left: 2rem;
-}
-
-#container {
-  width: 100%;
-  padding-bottom: 5rem;
-}
-
-#weekdays {
-  width: 100%;
-  display: flex;
-  color: #247BA0;
-  justify-content: center;
-}
-
-#calendar {
-  width: 65%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-}
