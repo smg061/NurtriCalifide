@@ -47,7 +47,7 @@
                 <!-- dropdown for Progress -->    
                 <div class="dropdown is-hoverable">
                     <div class="dropdown-trigger">
-                      <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
+                      <button class="button is-medium is-primary is-outlined" aria-haspopup="true" aria-controls="dropdown-menu4">
                         <span>Progress</span>
                         <span class="icon is-medium">
                           <i class="fas fa-angle-down" aria-hidden="true"></i>
@@ -70,9 +70,12 @@
                 </div>
                 <!-- dropdown for About -->
                 <div class="dropdown is-hoverable">
-                    <button class="button is-medium">
-                        <div class="about-tool">About
-                            <span class="about-text">Here on NutriCalifide we believe in blah blah blah.</span>
+                    <button class="button is-medium is-primary is-outlined">
+                        <div class="about-tool">
+                            About
+                            <span class="about-text">
+                                Here on NutriCalifide we believe in blah blah blah.
+                            </span>
                         </div>
                     </button>
                 </div>
@@ -88,26 +91,26 @@
                     <div class="dropdown is-hoverable">
                         <div class="dropdown-trigger">
                           <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                            <span>Meal Options</span>
+                            <span>Select Meal Options</span>
                             <span class="icon is-small">
                               <i class="fas fa-angle-down" aria-hidden="true"></i>
                             </span>
                           </button>
                         </div>
                         <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                            <div class="dropdown-content">
-                                <a href="#" class="dropdown-item">
-                                    Suggested Recipes + image
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    Suggested Recipes + image
-                                </a>
-                                <a href="#" class="dropdown-item">
-                                    Suggested Recipes+ image
-                                </a>
+                          <div class="dropdown-content">
+                            <div class="dropdown-item">
+                              <p>Healthy Meals</p>
                             </div>
+                          </div>
+                          <div class="dropdown-content">
+                              <div class="dropdown-item">
+                                  <p>Cheat Meals</p>
+                              </div>
+                          </div>
                         </div>
-                    </div>
+                      </div>
+
                     <div class="dropdown is-hoverable">
                         <div class="dropdown-trigger">
                           <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -141,33 +144,33 @@
             </div>
     
             <div class="columns">
-                <div class="column is-one-third has-background-link-dark">
+                <div class="column is-one-third has-background-link-dark" id="lunchDiv">
                     <p>Lunch</p>
                 </div>
                 <div class="column has-background-link-light">
-                        <div class="dropdown is-hoverable">
-                            <div class="dropdown-trigger">
-                              <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                                <span>Meal Options</span>
-                                <span class="icon is-small">
-                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                              </button>
-                            </div>
-                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                                <div class="dropdown-content">
-                                    <a href="#" class="dropdown-item">
-                                        Suggested Recipes+ image
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        Suggested Recipes + image
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        Suggested Recipes + image
-                                    </a>
-                                </div>
-                            </div>
+                    <div class="dropdown is-hoverable">
+                        <div class="dropdown-trigger">
+                          <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
+                            <span>Select Meal Options</span>
+                            <span class="icon is-small">
+                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                          </button>
                         </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                          <div class="dropdown-content">
+                            <div class="dropdown-item">
+                              <p>Healthy Meals</p>
+                            </div>
+                          </div>
+                          <div class="dropdown-content">
+                              <div class="dropdown-item">
+                                  <p>Cheat Meals</p>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                        
                        <div class="dropdown is-hoverable">
                             <div class="dropdown-trigger">
                               <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -189,7 +192,7 @@
                                         1100 Calories
                                     </a>
                                     <a href="#" class="dropdown-item">
-                                        1300 Calories
+                                      1300 Calories
                                     </a>
                                     <a href="#" class="dropdown-item">
                                         1500 Calories
@@ -200,73 +203,74 @@
                     </div>
                 </div>
         
-        <div class="columns">
-            <div class="column is-one-third has-background-warning" id="dinnerDiv">
-                <p>Dinner</p>
-            </div>
-            <div class="column has-background-link-light">
+            <div class="columns">
+                <div class="column is-one-third has-background-warning" id="dinnerDiv">
+                    <p>Dinner</p>
+                </div>  
+                <div class="column has-background-link-light">
                     <div class="dropdown is-hoverable">
-                        <div class="dropdown-trigger">
-                          <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                            <span>Meal Options</span>
+                     <div class="dropdown-trigger">
+                        <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
+                            <span>Select Meal Options</span>
                             <span class="icon is-small">
-                              <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            <i class="fas fa-angle-down" aria-hidden="true"></i>
                             </span>
-                          </button>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                      <div class="dropdown-content">
+                        <div class="dropdown-item">
+                          <p>Healthy Meals</p>
                         </div>
-                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                                <div class="dropdown-content">
-                                    <a href="#" class="dropdown-item">
-                                        Suggested Recipes + image
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        Suggested Recipes + image
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        Suggested Recipes + image
-                                    </a>
-                                </div>
-                            </div>
-                        <div class="dropdown is-hoverable">
-                            <div class="dropdown-trigger">
-                              <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
-                                <span>Calorie Intake</span>
-                                <span class="icon is-small">
-                                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                                </span>
-                              </button>
-                            </div>
-                            <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                                <div class="dropdown-content">
-                                    <a href="#" class="dropdown-item">
-                                        800 Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        1000Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        1100 Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        1300 Calories
-                                    </a>
-                                    <a href="#" class="dropdown-item">
-                                        1500 Calories
-                                    </a>
-                                </div>
-                            </div>
+                      </div>
+                      <div class="dropdown-content">
+                          <div class="dropdown-item">
+                              <p>Cheat Meals</p>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                      <button class="button is-medium" aria-haspopup="true" aria-controls="dropdown-menu4">
+                        <span>Calorie Intake</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item">
+                                800 Calories
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                1000Calories
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                1100 Calories
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                1300 Calories
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                1500 Calories
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+                        
             
             
         <div class="columns">
             <div class="column is-4">
-                <button class="viewPlan button is-primary is-large is-fullwidth" id="mealPlanBtn">View Meal Plan</button>
+                <button class="viewPlan button is-primary is-large is-fullwidth" id="mealPlanBtn">View Meal Search History</button>
             </div>
             <div class="column is-4">
-                <button class="recipes button is-primary is-large is-fullwidth" id="recipesBtn">Recipes</button>
+                <button class="recipes button is-primary is-large is-fullwidth" id="recipesBtn">Added Recipes</button>
             </div>
             <div class="column is-4">
                 <button class="goalReview button is-primary is-large is-fullwidth">Review This Week's Goal</button>
