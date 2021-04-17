@@ -158,9 +158,7 @@ a.navbar-item {
 #eventMeals.error {
   border: 2px solid red;
 }
-/* #cancelButton, #deleteButton {
-  background-color: #d36c6c;
-} */
+
 #closeButton {
   background-color: #92a1d1;
 }
@@ -178,3 +176,92 @@ a.navbar-item {
   background-color: rgba(0,0,0,0.8);
 }
 /*End Thomas Branch*/
+
+.hero-body p {
+  padding-left: 10rem;
+}
+
+.hero {
+  width: 100%;
+  padding: 1rem;
+}
+
+.hero-body {
+  padding: unset;
+}
+
+.navbar-menu {
+  padding: .5rem;
+}
+
+.dropdown > .button {
+  margin-left: .5rem;
+}
+
+.about-tool .about-text {
+  top: 2.4rem;
+  right: 2rem;
+}
+
+.main-container {
+  padding-top: 1rem;
+  padding-bottom: 5rem;
+  background-color: #eef3fc!important;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.has-background-link-light {
+  background-color: unset !important;
+}
+
+.column {
+  flex-basis: unset;
+  flex-grow: unset;
+  flex-shrink: unset;
+}
+
+.columns {
+  justify-content: flex-start;
+  padding: 0 2rem;
+  padding-top: 2rem;
+}
+
+.columns:last-child {
+  padding: 0 1rem;
+  padding-top: 2rem;
+}
+
+#monthDisplay {
+  color: darkblue;
+  font-size: 3rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+  
+}
+
+#monthDisplay + span,
+#monthDisplay {
+  padding-left: 2rem;
+}
+
+#container {
+  width: 100%;
+  padding-bottom: 5rem;
+}
+
+#weekdays {
+  width: 100%;
+  display: flex;
+  color: #247BA0;
+  justify-content: center;
+}
+
+#calendar {
+  width: 65%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
